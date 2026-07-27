@@ -1,1 +1,0 @@
-# BrandVerse-Prompt-Studio
