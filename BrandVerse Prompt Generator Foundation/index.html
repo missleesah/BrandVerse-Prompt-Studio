@@ -1,0 +1,2998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="BrandVerse Prompt Studio is a universal brand inspiration engine for creating original AI image prompts."
+  >
+  <title>BrandVerse Prompt Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#studio-panel-container">Skip to generator</a>
+
+  <header id="app-header" class="app-header">
+    <div class="app-header__content">
+      <p class="app-kicker">Universal Brand Inspiration Engine</p>
+      <h1>BrandVerse Prompt Studio</h1>
+      <p class="app-subtitle">
+        Create polished, original image prompts for characters, products,
+        environments, and complete brand-inspired scenes.
+      </p>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section id="intro-panel" class="intro-panel" aria-labelledby="intro-title">
+      <h2 id="intro-title">Create your concept one studio at a time</h2>
+      <p>
+        Create original, brand-inspired image prompts for characters, products,
+        environments, and complete scenes. Choose your creative direction,
+        customize the details, and generate one polished prompt for use across
+        AI image platforms.
+      </p>
+      <p class="disclaimer">
+        Reference images and recognizable themes are used for creative
+        inspiration only. Generated prompts should describe an original visual
+        direction rather than duplicate an existing design.
+      </p>
+    </section>
+
+    <section class="preset-section" aria-labelledby="preset-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-eyebrow">Quick Start</p>
+          <h2 id="preset-heading">Creative Presets</h2>
+        </div>
+      </div>
+
+      <div class="preset-grid">
+        <article class="preset-card" data-preset-id="preset-commercial-character">
+          <h3>Commercial Brand Character</h3>
+          <p>Create a polished character-centered brand concept.</p>
+          <button
+            type="button"
+            class="button button--secondary"
+            data-action="apply-preset"
+            data-preset="preset-commercial-character"
+          >
+            Apply Preset
+          </button>
+        </article>
+
+        <article class="preset-card" data-preset-id="preset-product-campaign">
+          <h3>Product Campaign</h3>
+          <p>Build a commercial product advertisement.</p>
+          <button
+            type="button"
+            class="button button--secondary"
+            data-action="apply-preset"
+            data-preset="preset-product-campaign"
+          >
+            Apply Preset
+          </button>
+        </article>
+
+        <article class="preset-card" data-preset-id="preset-fashion-doll">
+          <h3>Glam Fashion Doll</h3>
+          <p>Create a brand-inspired doll or collectible.</p>
+          <button
+            type="button"
+            class="button button--secondary"
+            data-action="apply-preset"
+            data-preset="preset-fashion-doll"
+          >
+            Apply Preset
+          </button>
+        </article>
+
+        <article class="preset-card" data-preset-id="preset-fantasy-world">
+          <h3>Immersive Brand World</h3>
+          <p>Create a complete themed environment.</p>
+          <button
+            type="button"
+            class="button button--secondary"
+            data-action="apply-preset"
+            data-preset="preset-fantasy-world"
+          >
+            Apply Preset
+          </button>
+        </article>
+
+        <article class="preset-card" data-preset-id="preset-clean-product">
+          <h3>Clean Product Showcase</h3>
+          <p>Create a minimal studio product image.</p>
+          <button
+            type="button"
+            class="button button--secondary"
+            data-action="apply-preset"
+            data-preset="preset-clean-product"
+          >
+            Apply Preset
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <nav
+      id="studio-tabs"
+      class="studio-tabs"
+      role="tablist"
+      aria-label="BrandVerse Studios"
+    >
+      <button
+        id="tab-inspiration"
+        class="studio-tab active"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        aria-controls="studio-inspiration"
+        tabindex="0"
+        data-studio="inspiration"
+      >
+        Inspiration Studio
+      </button>
+
+      <button
+        id="tab-subject"
+        class="studio-tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="studio-subject"
+        tabindex="-1"
+        data-studio="subject"
+      >
+        Subject Studio
+      </button>
+
+      <button
+        id="tab-style"
+        class="studio-tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="studio-style"
+        tabindex="-1"
+        data-studio="style"
+      >
+        Style Studio
+      </button>
+
+      <button
+        id="tab-environment"
+        class="studio-tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="studio-environment"
+        tabindex="-1"
+        data-studio="environment"
+      >
+        Environment Studio
+      </button>
+
+      <button
+        id="tab-composition"
+        class="studio-tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="studio-composition"
+        tabindex="-1"
+        data-studio="composition"
+      >
+        Composition Studio
+      </button>
+
+      <button
+        id="tab-finish"
+        class="studio-tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="studio-finish"
+        tabindex="-1"
+        data-studio="finish"
+      >
+        Finish Studio
+      </button>
+
+      <button
+        id="tab-prompt"
+        class="studio-tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="studio-prompt"
+        tabindex="-1"
+        data-studio="prompt"
+      >
+        Prompt Studio
+      </button>
+    </nav>
+
+    <div id="studio-panel-container" class="studio-panel-container">
+      <section
+        id="studio-inspiration"
+        class="studio-panel active"
+        role="tabpanel"
+        aria-labelledby="tab-inspiration"
+        data-studio-panel="inspiration"
+      >
+        <div class="studio-heading">
+          <div>
+            <p class="section-eyebrow">Studio 1</p>
+            <h2>Inspiration Studio</h2>
+            <p>Define the brand, product, theme, or original concept.</p>
+          </div>
+        </div>
+
+        <details
+          id="category-inspiration"
+          class="category-card"
+          data-category="inspiration"
+          open
+        >
+          <summary class="category-summary">
+            <span>Inspiration</span>
+            <span class="category-status" data-category-status="inspiration">
+              Required
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-inspiration"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="inspiration"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="randomize-inspiration"
+              type="button"
+              class="button button--tool"
+              data-action="randomize-category"
+              data-category="inspiration"
+              data-randomizable="true"
+            >
+              Randomize
+            </button>
+
+            <button
+              id="clear-inspiration"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="inspiration"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <div class="field">
+              <label for="input-inspiration-category">
+                Inspiration Category
+              </label>
+              <select
+                id="input-inspiration-category"
+                name="inspirationCategory"
+                data-key="inspirationCategory"
+                data-category="inspiration"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Food & Beverage" selected>Food & Beverage</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+                <option value="Technology">Technology</option>
+                <option value="Automotive">Automotive</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Holidays & Seasonal">Holidays & Seasonal</option>
+                <option value="Animals & Nature">Animals & Nature</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Sports">Sports</option>
+                <option value="Careers">Careers</option>
+                <option value="Retro & Historical">Retro & Historical</option>
+                <option value="Cultural Inspiration">Cultural Inspiration</option>
+                <option value="Luxury">Luxury</option>
+                <option value="Toys & Collectibles">Toys & Collectibles</option>
+                <option value="Travel">Travel</option>
+                <option value="Home & Interior">Home & Interior</option>
+                <option value="Original Custom Theme">Original Custom Theme</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-inspiration-source">Inspiration Source</label>
+              <select
+                id="input-inspiration-source"
+                name="inspirationSource"
+                data-key="inspirationSource"
+                data-category="inspiration"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Custom Brand or Concept" selected>
+                  Custom Brand or Concept
+                </option>
+                <option value="Consumer Product">Consumer Product</option>
+                <option value="Food or Beverage">Food or Beverage</option>
+                <option value="Restaurant or Retail Experience">
+                  Restaurant or Retail Experience
+                </option>
+                <option value="Fashion House or Style">
+                  Fashion House or Style
+                </option>
+                <option value="Beauty Product or Campaign">
+                  Beauty Product or Campaign
+                </option>
+                <option value="Technology Product">Technology Product</option>
+                <option value="Vehicle or Motorsport Theme">
+                  Vehicle or Motorsport Theme
+                </option>
+                <option value="Entertainment Theme">Entertainment Theme</option>
+                <option value="Holiday or Seasonal Theme">
+                  Holiday or Seasonal Theme
+                </option>
+                <option value="Career or Profession">Career or Profession</option>
+                <option value="Era or Decade">Era or Decade</option>
+                <option value="Place or Cultural Aesthetic">
+                  Place or Cultural Aesthetic
+                </option>
+                <option value="Original Fictional Brand">
+                  Original Fictional Brand
+                </option>
+              </select>
+            </div>
+
+            <div class="field field--wide">
+              <label for="input-inspiration-name">
+                Brand, Product, or Theme Name
+              </label>
+              <input
+                id="input-inspiration-name"
+                name="inspirationName"
+                type="text"
+                data-key="inspirationName"
+                data-category="inspiration"
+                data-lockable="true"
+                minlength="2"
+                maxlength="80"
+                required
+                placeholder="Example: lavender body care boutique"
+              >
+            </div>
+
+            <div class="field">
+              <label for="input-influence-strength">Influence Strength</label>
+              <select
+                id="input-influence-strength"
+                name="influenceStrength"
+                data-key="influenceStrength"
+                data-category="inspiration"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Subtle">Subtle</option>
+                <option value="Balanced" selected>Balanced</option>
+                <option value="Strong">Strong</option>
+                <option value="Transformative Original Remix">
+                  Transformative Original Remix
+                </option>
+              </select>
+            </div>
+
+            <div class="field field--wide">
+              <label for="input-custom-concept">Custom Concept Direction</label>
+              <textarea
+                id="input-custom-concept"
+                name="customConcept"
+                data-key="customConcept"
+                data-category="inspiration"
+                data-lockable="true"
+                maxlength="400"
+                rows="4"
+                placeholder="Describe the creative idea or transformation."
+              ></textarea>
+            </div>
+
+            <div class="field field--wide">
+              <label for="input-reference-direction">
+                Reference Image Direction
+              </label>
+              <textarea
+                id="input-reference-direction"
+                name="referenceDirection"
+                data-key="referenceDirection"
+                data-category="inspiration"
+                data-lockable="true"
+                maxlength="500"
+                rows="4"
+                placeholder="Optional: describe visible colors, mood, composition, or styling to use as inspiration."
+              ></textarea>
+              <p class="field-note">
+                Describe inspiration only. Do not request an exact copy.
+              </p>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section
+        id="studio-subject"
+        class="studio-panel"
+        role="tabpanel"
+        aria-labelledby="tab-subject"
+        data-studio-panel="subject"
+        hidden
+      >
+        <div class="studio-heading">
+          <div>
+            <p class="section-eyebrow">Studio 2</p>
+            <h2>Subject Studio</h2>
+            <p>Choose what you are creating and define its main details.</p>
+          </div>
+        </div>
+
+        <details
+          id="category-creation-type"
+          class="category-card"
+          data-category="creationType"
+          open
+        >
+          <summary class="category-summary">
+            <span>Creation Type</span>
+            <span class="category-status" data-category-status="creationType">
+              Required
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-creationType"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="creationType"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="randomize-creationType"
+              type="button"
+              class="button button--tool"
+              data-action="randomize-category"
+              data-category="creationType"
+              data-randomizable="true"
+            >
+              Randomize
+            </button>
+
+            <button
+              id="clear-creationType"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="creationType"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <div class="field">
+              <label for="input-creation-type">Main Creation Type</label>
+              <select
+                id="input-creation-type"
+                name="creationType"
+                data-key="creationType"
+                data-category="creationType"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Character">Character</option>
+                <option value="Fashion Doll">Fashion Doll</option>
+                <option value="Mascot">Mascot</option>
+                <option value="Plush Character">Plush Character</option>
+                <option value="Collectible Figure">Collectible Figure</option>
+                <option value="Product">Product</option>
+                <option value="Product Packaging">Product Packaging</option>
+                <option value="Product Display">Product Display</option>
+                <option value="Environment">Environment</option>
+                <option value="Room or Interior">Room or Interior</option>
+                <option value="Boutique or Retail Space">
+                  Boutique or Retail Space
+                </option>
+                <option value="Fantasy World">Fantasy World</option>
+                <option value="Beauty Campaign">Beauty Campaign</option>
+                <option value="Luxury Editorial">Luxury Editorial</option>
+                <option value="Advertising Scene">Advertising Scene</option>
+                <option value="Product Collection">Product Collection</option>
+                <option value="Character and Product Scene">
+                  Character and Product Scene
+                </option>
+                <option value="Complete Scene" selected>Complete Scene</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-subject-count">Subject Count</label>
+              <select
+                id="input-subject-count"
+                name="subjectCount"
+                data-key="subjectCount"
+                data-category="creationType"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="One" selected>One</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
+                <option value="Small Group">Small Group</option>
+                <option value="Coordinated Collection">
+                  Coordinated Collection
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-target-audience">Audience</label>
+              <select
+                id="input-target-audience"
+                name="targetAudience"
+                data-key="targetAudience"
+                data-category="creationType"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="General Audience" selected>General Audience</option>
+                <option value="Adults">Adults</option>
+                <option value="Teens">Teens</option>
+                <option value="Children">Children</option>
+                <option value="Families">Families</option>
+                <option value="Luxury Consumers">Luxury Consumers</option>
+                <option value="Collectors">Collectors</option>
+                <option value="Beauty Shoppers">Beauty Shoppers</option>
+                <option value="Fashion Shoppers">Fashion Shoppers</option>
+                <option value="Digital Art Buyers">Digital Art Buyers</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-presentation-purpose">
+                Presentation Purpose
+              </label>
+              <select
+                id="input-presentation-purpose"
+                name="presentationPurpose"
+                data-key="presentationPurpose"
+                data-category="creationType"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Commercial Artwork" selected>
+                  Commercial Artwork
+                </option>
+                <option value="Social Media Visual">Social Media Visual</option>
+                <option value="Digital Download">Digital Download</option>
+                <option value="Print-on-Demand Design">
+                  Print-on-Demand Design
+                </option>
+                <option value="Product Concept">Product Concept</option>
+                <option value="Promotional Campaign">
+                  Promotional Campaign
+                </option>
+                <option value="Editorial Concept">Editorial Concept</option>
+                <option value="Collectible Concept">Collectible Concept</option>
+                <option value="Packaging Concept">Packaging Concept</option>
+                <option value="Personal Creative Project">
+                  Personal Creative Project
+                </option>
+              </select>
+            </div>
+          </div>
+        </details>
+
+        <details
+          id="category-character"
+          class="category-card"
+          data-category="character"
+          data-conditional-category="character"
+          open
+        >
+          <summary class="category-summary">
+            <span>Character Design</span>
+            <span class="category-status" data-category-status="character">
+              Conditional
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-character"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="character"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="randomize-character"
+              type="button"
+              class="button button--tool"
+              data-action="randomize-category"
+              data-category="character"
+              data-randomizable="true"
+            >
+              Randomize
+            </button>
+
+            <button
+              id="clear-character"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="character"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <div class="field">
+              <label for="input-character-type">Character Type</label>
+              <select
+                id="input-character-type"
+                name="characterType"
+                data-key="characterType"
+                data-category="character"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Adult Character" selected>Adult Character</option>
+                <option value="Teen Character">Teen Character</option>
+                <option value="Child Character">Child Character</option>
+                <option value="Fashion Doll">Fashion Doll</option>
+                <option value="Chibi Character">Chibi Character</option>
+                <option value="Mascot">Mascot</option>
+                <option value="Plush Character">Plush Character</option>
+                <option value="Collectible Figure">Collectible Figure</option>
+                <option value="Fantasy Character">Fantasy Character</option>
+                <option value="Futuristic Character">Futuristic Character</option>
+                <option value="Career Character">Career Character</option>
+                <option value="Original Creature">Original Creature</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-gender-presentation">
+                Gender Presentation
+              </label>
+              <select
+                id="input-gender-presentation"
+                name="genderPresentation"
+                data-key="genderPresentation"
+                data-category="character"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="User Choice" selected>User Choice</option>
+                <option value="Feminine">Feminine</option>
+                <option value="Masculine">Masculine</option>
+                <option value="Androgynous">Androgynous</option>
+                <option value="Mixed Group">Mixed Group</option>
+                <option value="Not Applicable">Not Applicable</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-age-group">Age Group</label>
+              <select
+                id="input-age-group"
+                name="ageGroup"
+                data-key="ageGroup"
+                data-category="character"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Child">Child</option>
+                <option value="Teen">Teen</option>
+                <option value="Young Adult">Young Adult</option>
+                <option value="Adult" selected>Adult</option>
+                <option value="Mature Adult">Mature Adult</option>
+                <option value="Mixed Ages">Mixed Ages</option>
+                <option value="Not Applicable">Not Applicable</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-skin-tone">Skin Tone</label>
+              <select
+                id="input-skin-tone"
+                name="skinTone"
+                data-key="skinTone"
+                data-category="character"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Custom or Unspecified" selected>
+                  Custom or Unspecified
+                </option>
+                <option value="Very Deep">Very Deep</option>
+                <option value="Deep">Deep</option>
+                <option value="Rich Brown">Rich Brown</option>
+                <option value="Medium Brown">Medium Brown</option>
+                <option value="Golden Brown">Golden Brown</option>
+                <option value="Tan">Tan</option>
+                <option value="Light">Light</option>
+                <option value="Porcelain">Porcelain</option>
+                <option value="Fantasy Skin Tone">Fantasy Skin Tone</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-body-type">Body Type</label>
+              <select
+                id="input-body-type"
+                name="bodyType"
+                data-key="bodyType"
+                data-category="character"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Custom or Unspecified" selected>
+                  Custom or Unspecified
+                </option>
+                <option value="Petite">Petite</option>
+                <option value="Slim">Slim</option>
+                <option value="Athletic">Athletic</option>
+                <option value="Curvy">Curvy</option>
+                <option value="Slim-Thick">Slim-Thick</option>
+                <option value="Plus Size">Plus Size</option>
+                <option value="Muscular">Muscular</option>
+                <option value="Tall">Tall</option>
+                <option value="Short">Short</option>
+                <option value="Exaggerated Doll Proportions">
+                  Exaggerated Doll Proportions
+                </option>
+                <option value="Chibi Proportions">Chibi Proportions</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-hair-style">Hair Style</label>
+              <select
+                id="input-hair-style"
+                name="hairStyle"
+                data-key="hairStyle"
+                data-category="character"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Custom or Unspecified" selected>
+                  Custom or Unspecified
+                </option>
+                <option value="Sleek Ponytail">Sleek Ponytail</option>
+                <option value="High Curly Ponytail">High Curly Ponytail</option>
+                <option value="Messy Bun">Messy Bun</option>
+                <option value="Space Buns">Space Buns</option>
+                <option value="Half Up Half Down">Half Up Half Down</option>
+                <option value="Long Glam Curls">Long Glam Curls</option>
+                <option value="Voluminous Afro">Voluminous Afro</option>
+                <option value="Curly Afro">Curly Afro</option>
+                <option value="Braided Ponytail">Braided Ponytail</option>
+                <option value="Box Braids">Box Braids</option>
+                <option value="Bohemian Braids">Bohemian Braids</option>
+                <option value="Locs">Locs</option>
+                <option value="Twists">Twists</option>
+                <option value="Sleek Bob">Sleek Bob</option>
+                <option value="Layered Bob">Layered Bob</option>
+                <option value="Pixie Cut">Pixie Cut</option>
+                <option value="Finger Waves">Finger Waves</option>
+                <option value="Long Straight Hair">Long Straight Hair</option>
+                <option value="Beach Waves">Beach Waves</option>
+                <option value="Bantu Knots">Bantu Knots</option>
+                <option value="Bald or Shaved">Bald or Shaved</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-hair-color">Hair Color</label>
+              <select
+                id="input-hair-color"
+                name="hairColor"
+                data-key="hairColor"
+                data-category="character"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Custom or Unspecified" selected>
+                  Custom or Unspecified
+                </option>
+                <option value="Natural Black">Natural Black</option>
+                <option value="Dark Brown">Dark Brown</option>
+                <option value="Chocolate Brown">Chocolate Brown</option>
+                <option value="Auburn">Auburn</option>
+                <option value="Copper">Copper</option>
+                <option value="Platinum Blonde">Platinum Blonde</option>
+                <option value="Golden Blonde">Golden Blonde</option>
+                <option value="Silver">Silver</option>
+                <option value="White">White</option>
+                <option value="Purple">Purple</option>
+                <option value="Turquoise">Turquoise</option>
+                <option value="Pink">Pink</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Red">Red</option>
+                <option value="Two-Tone">Two-Tone</option>
+                <option value="Ombré">Ombré</option>
+                <option value="Brand-Coordinated Colors">
+                  Brand-Coordinated Colors
+                </option>
+              </select>
+            </div>
+
+            <fieldset
+              id="input-facial-details"
+              class="field field--wide chip-field"
+              data-key="facialDetails"
+              data-category="character"
+              data-max-selections="6"
+              data-lockable="true"
+              data-randomizable="true"
+            >
+              <legend>Facial Details</legend>
+              <p class="field-note">Select up to 6.</p>
+              <div class="chip-group">
+                <button type="button" class="chip" data-value="Freckles" aria-pressed="false">Freckles</button>
+                <button type="button" class="chip" data-value="Deep Dimples" aria-pressed="false">Deep Dimples</button>
+                <button type="button" class="chip" data-value="Arched Brows" aria-pressed="false">Arched Brows</button>
+                <button type="button" class="chip" data-value="Defined Brows" aria-pressed="false">Defined Brows</button>
+                <button type="button" class="chip" data-value="Dramatic Lashes" aria-pressed="false">Dramatic Lashes</button>
+                <button type="button" class="chip" data-value="Natural Lashes" aria-pressed="false">Natural Lashes</button>
+                <button type="button" class="chip" data-value="Glossy Lips" aria-pressed="false">Glossy Lips</button>
+                <button type="button" class="chip" data-value="Matte Lips" aria-pressed="false">Matte Lips</button>
+                <button type="button" class="chip" data-value="Beauty Mark" aria-pressed="false">Beauty Mark</button>
+                <button type="button" class="chip" data-value="Nose Ring" aria-pressed="false">Nose Ring</button>
+                <button type="button" class="chip" data-value="Soft Blush" aria-pressed="false">Soft Blush</button>
+                <button type="button" class="chip" data-value="Contoured Cheekbones" aria-pressed="false">Contoured Cheekbones</button>
+                <button type="button" class="chip" data-value="Luminous Skin" aria-pressed="false">Luminous Skin</button>
+                <button type="button" class="chip" data-value="Bronze Glow" aria-pressed="false">Bronze Glow</button>
+                <button type="button" class="chip" data-value="Doll-Like Eyes" aria-pressed="false">Doll-Like Eyes</button>
+                <button type="button" class="chip" data-value="Natural Skin Texture" aria-pressed="false">Natural Skin Texture</button>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="input-expression">Expression</label>
+              <select
+                id="input-expression"
+                name="expression"
+                data-key="expression"
+                data-category="character"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Confident" selected>Confident</option>
+                <option value="Joyful">Joyful</option>
+                <option value="Playful">Playful</option>
+                <option value="Calm">Calm</option>
+                <option value="Glamorous">Glamorous</option>
+                <option value="Fierce">Fierce</option>
+                <option value="Friendly">Friendly</option>
+                <option value="Curious">Curious</option>
+                <option value="Surprised">Surprised</option>
+                <option value="Thoughtful">Thoughtful</option>
+                <option value="Serious">Serious</option>
+                <option value="Sassy">Sassy</option>
+                <option value="Excited">Excited</option>
+                <option value="Relaxed">Relaxed</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-outfit-direction">Outfit Direction</label>
+              <select
+                id="input-outfit-direction"
+                name="outfitDirection"
+                data-key="outfitDirection"
+                data-category="character"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Coordinated Brand-Inspired Fashion" selected>
+                  Coordinated Brand-Inspired Fashion
+                </option>
+                <option value="Luxury Editorial Fashion">
+                  Luxury Editorial Fashion
+                </option>
+                <option value="Streetwear">Streetwear</option>
+                <option value="Casual Chic">Casual Chic</option>
+                <option value="Glamorous Eveningwear">
+                  Glamorous Eveningwear
+                </option>
+                <option value="Sporty Fashion">Sporty Fashion</option>
+                <option value="Retro Fashion">Retro Fashion</option>
+                <option value="Futuristic Fashion">Futuristic Fashion</option>
+                <option value="Career Uniform">Career Uniform</option>
+                <option value="Fantasy Costume">Fantasy Costume</option>
+                <option value="Seasonal Outfit">Seasonal Outfit</option>
+                <option value="Character Costume">Character Costume</option>
+                <option value="Product-Matching Outfit">
+                  Product-Matching Outfit
+                </option>
+                <option value="Custom Outfit">Custom Outfit</option>
+              </select>
+            </div>
+
+            <fieldset
+              id="input-accessories"
+              class="field field--wide chip-field"
+              data-key="accessories"
+              data-category="character"
+              data-max-selections="8"
+              data-lockable="true"
+              data-randomizable="true"
+            >
+              <legend>Accessories</legend>
+              <p class="field-note">Select up to 8.</p>
+              <div class="chip-group">
+                <button type="button" class="chip" data-value="None" aria-pressed="false">None</button>
+                <button type="button" class="chip" data-value="Gold Jewelry" aria-pressed="false">Gold Jewelry</button>
+                <button type="button" class="chip" data-value="Silver Jewelry" aria-pressed="false">Silver Jewelry</button>
+                <button type="button" class="chip" data-value="Rose Gold Jewelry" aria-pressed="false">Rose Gold Jewelry</button>
+                <button type="button" class="chip" data-value="Diamond Jewelry" aria-pressed="false">Diamond Jewelry</button>
+                <button type="button" class="chip" data-value="Hoop Earrings" aria-pressed="false">Hoop Earrings</button>
+                <button type="button" class="chip" data-value="Statement Earrings" aria-pressed="false">Statement Earrings</button>
+                <button type="button" class="chip" data-value="Layered Necklaces" aria-pressed="false">Layered Necklaces</button>
+                <button type="button" class="chip" data-value="Nameplate Necklace" aria-pressed="false">Nameplate Necklace</button>
+                <button type="button" class="chip" data-value="Charm Bracelet" aria-pressed="false">Charm Bracelet</button>
+                <button type="button" class="chip" data-value="Rings" aria-pressed="false">Rings</button>
+                <button type="button" class="chip" data-value="Bangles" aria-pressed="false">Bangles</button>
+                <button type="button" class="chip" data-value="Sunglasses" aria-pressed="false">Sunglasses</button>
+                <button type="button" class="chip" data-value="Designer-Inspired Handbag" aria-pressed="false">Designer-Inspired Handbag</button>
+                <button type="button" class="chip" data-value="Mini Purse" aria-pressed="false">Mini Purse</button>
+                <button type="button" class="chip" data-value="Hair Accessories" aria-pressed="false">Hair Accessories</button>
+                <button type="button" class="chip" data-value="Rhinestone Accessories" aria-pressed="false">Rhinestone Accessories</button>
+                <button type="button" class="chip" data-value="Watch" aria-pressed="false">Watch</button>
+                <button type="button" class="chip" data-value="Hat" aria-pressed="false">Hat</button>
+                <button type="button" class="chip" data-value="Scarf" aria-pressed="false">Scarf</button>
+                <button type="button" class="chip" data-value="Glasses" aria-pressed="false">Glasses</button>
+              </div>
+            </fieldset>
+
+            <fieldset
+              id="input-character-props"
+              class="field field--wide chip-field"
+              data-key="characterProps"
+              data-category="character"
+              data-max-selections="6"
+              data-lockable="true"
+              data-randomizable="true"
+            >
+              <legend>Character Props</legend>
+              <p class="field-note">Select up to 6.</p>
+              <div class="chip-group">
+                <button type="button" class="chip" data-value="None" aria-pressed="false">None</button>
+                <button type="button" class="chip" data-value="Product Package" aria-pressed="false">Product Package</button>
+                <button type="button" class="chip" data-value="Drink Cup" aria-pressed="false">Drink Cup</button>
+                <button type="button" class="chip" data-value="Shopping Bag" aria-pressed="false">Shopping Bag</button>
+                <button type="button" class="chip" data-value="Phone" aria-pressed="false">Phone</button>
+                <button type="button" class="chip" data-value="Camera" aria-pressed="false">Camera</button>
+                <button type="button" class="chip" data-value="Beauty Product" aria-pressed="false">Beauty Product</button>
+                <button type="button" class="chip" data-value="Food Item" aria-pressed="false">Food Item</button>
+                <button type="button" class="chip" data-value="Candy" aria-pressed="false">Candy</button>
+                <button type="button" class="chip" data-value="Toy" aria-pressed="false">Toy</button>
+                <button type="button" class="chip" data-value="Laptop" aria-pressed="false">Laptop</button>
+                <button type="button" class="chip" data-value="Microphone" aria-pressed="false">Microphone</button>
+                <button type="button" class="chip" data-value="Sports Equipment" aria-pressed="false">Sports Equipment</button>
+                <button type="button" class="chip" data-value="Flowers" aria-pressed="false">Flowers</button>
+                <button type="button" class="chip" data-value="Gift Box" aria-pressed="false">Gift Box</button>
+                <button type="button" class="chip" data-value="Sign" aria-pressed="false">Sign</button>
+                <button type="button" class="chip" data-value="Vehicle Accessory" aria-pressed="false">Vehicle Accessory</button>
+                <button type="button" class="chip" data-value="Custom Prop" aria-pressed="false">Custom Prop</button>
+              </div>
+            </fieldset>
+
+            <div class="field field--wide">
+              <label for="input-character-notes">Character Notes</label>
+              <textarea
+                id="input-character-notes"
+                name="characterNotes"
+                data-key="characterNotes"
+                data-category="character"
+                data-lockable="true"
+                maxlength="500"
+                rows="4"
+                placeholder="Add specific appearance, outfit, or character details."
+              ></textarea>
+            </div>
+          </div>
+        </details>
+
+        <details
+          id="category-product"
+          class="category-card"
+          data-category="product"
+          data-conditional-category="product"
+          open
+        >
+          <summary class="category-summary">
+            <span>Product Design</span>
+            <span class="category-status" data-category-status="product">
+              Conditional
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-product"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="product"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="randomize-product"
+              type="button"
+              class="button button--tool"
+              data-action="randomize-category"
+              data-category="product"
+              data-randomizable="true"
+            >
+              Randomize
+            </button>
+
+            <button
+              id="clear-product"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="product"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <div class="field">
+              <label for="input-product-category">Product Category</label>
+              <select
+                id="input-product-category"
+                name="productCategory"
+                data-key="productCategory"
+                data-category="product"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="General Consumer Product" selected>
+                  General Consumer Product
+                </option>
+                <option value="Food">Food</option>
+                <option value="Beverage">Beverage</option>
+                <option value="Candy">Candy</option>
+                <option value="Snack">Snack</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Beauty Product">Beauty Product</option>
+                <option value="Body Care Product">Body Care Product</option>
+                <option value="Cosmetic">Cosmetic</option>
+                <option value="Fragrance">Fragrance</option>
+                <option value="Fashion Accessory">Fashion Accessory</option>
+                <option value="Footwear">Footwear</option>
+                <option value="Handbag">Handbag</option>
+                <option value="Jewelry">Jewelry</option>
+                <option value="Technology Product">Technology Product</option>
+                <option value="Toy">Toy</option>
+                <option value="Collectible">Collectible</option>
+                <option value="Home Product">Home Product</option>
+                <option value="Candle">Candle</option>
+                <option value="Stationery">Stationery</option>
+                <option value="Gift Item">Gift Item</option>
+                <option value="Custom Product">Custom Product</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-product-form">Product Form</label>
+              <select
+                id="input-product-form"
+                name="productForm"
+                data-key="productForm"
+                data-category="product"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Hero Product" selected>Hero Product</option>
+                <option value="Single Packaged Product">
+                  Single Packaged Product
+                </option>
+                <option value="Product and Packaging">
+                  Product and Packaging
+                </option>
+                <option value="Open Product Display">
+                  Open Product Display
+                </option>
+                <option value="Product Collection">Product Collection</option>
+                <option value="Gift Set">Gift Set</option>
+                <option value="Limited Edition Product">
+                  Limited Edition Product
+                </option>
+                <option value="Oversized Fantasy Product">
+                  Oversized Fantasy Product
+                </option>
+                <option value="Miniature Product">Miniature Product</option>
+                <option value="Floating Product Arrangement">
+                  Floating Product Arrangement
+                </option>
+                <option value="Product in Use">Product in Use</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-packaging-style">Packaging Style</label>
+              <select
+                id="input-packaging-style"
+                name="packagingStyle"
+                data-key="packagingStyle"
+                data-category="product"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="None">None</option>
+                <option value="Premium Custom Packaging" selected>
+                  Premium Custom Packaging
+                </option>
+                <option value="Retail Box">Retail Box</option>
+                <option value="Pouch">Pouch</option>
+                <option value="Jar">Jar</option>
+                <option value="Bottle">Bottle</option>
+                <option value="Tube">Tube</option>
+                <option value="Can">Can</option>
+                <option value="Carton">Carton</option>
+                <option value="Wrapper">Wrapper</option>
+                <option value="Gift Box">Gift Box</option>
+                <option value="Display Case">Display Case</option>
+                <option value="Collectible Blister Pack">
+                  Collectible Blister Pack
+                </option>
+                <option value="Luxury Packaging">Luxury Packaging</option>
+                <option value="Eco-Friendly Packaging">
+                  Eco-Friendly Packaging
+                </option>
+                <option value="Retro Packaging">Retro Packaging</option>
+                <option value="Futuristic Packaging">
+                  Futuristic Packaging
+                </option>
+              </select>
+            </div>
+
+            <fieldset
+              id="input-product-material"
+              class="field field--wide chip-field"
+              data-key="productMaterial"
+              data-category="product"
+              data-max-selections="4"
+              data-lockable="true"
+              data-randomizable="true"
+            >
+              <legend>Product Material</legend>
+              <p class="field-note">Select up to 4.</p>
+              <div class="chip-group">
+                <button type="button" class="chip" data-value="None" aria-pressed="false">None</button>
+                <button type="button" class="chip" data-value="Glass" aria-pressed="false">Glass</button>
+                <button type="button" class="chip" data-value="Plastic" aria-pressed="false">Plastic</button>
+                <button type="button" class="chip" data-value="Metal" aria-pressed="false">Metal</button>
+                <button type="button" class="chip" data-value="Aluminum" aria-pressed="false">Aluminum</button>
+                <button type="button" class="chip" data-value="Paper" aria-pressed="false">Paper</button>
+                <button type="button" class="chip" data-value="Cardboard" aria-pressed="false">Cardboard</button>
+                <button type="button" class="chip" data-value="Fabric" aria-pressed="false">Fabric</button>
+                <button type="button" class="chip" data-value="Leather" aria-pressed="false">Leather</button>
+                <button type="button" class="chip" data-value="Wood" aria-pressed="false">Wood</button>
+                <button type="button" class="chip" data-value="Ceramic" aria-pressed="false">Ceramic</button>
+                <button type="button" class="chip" data-value="Acrylic" aria-pressed="false">Acrylic</button>
+                <button type="button" class="chip" data-value="Crystal" aria-pressed="false">Crystal</button>
+                <button type="button" class="chip" data-value="Glossy Coating" aria-pressed="false">Glossy Coating</button>
+                <button type="button" class="chip" data-value="Matte Coating" aria-pressed="false">Matte Coating</button>
+                <button type="button" class="chip" data-value="Foil" aria-pressed="false">Foil</button>
+                <button type="button" class="chip" data-value="Rhinestones" aria-pressed="false">Rhinestones</button>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="input-product-condition">Product Condition</label>
+              <select
+                id="input-product-condition"
+                name="productCondition"
+                data-key="productCondition"
+                data-category="product"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="New and Pristine" selected>
+                  New and Pristine
+                </option>
+                <option value="Freshly Opened">Freshly Opened</option>
+                <option value="In Use">In Use</option>
+                <option value="Partially Used">Partially Used</option>
+                <option value="Handcrafted">Handcrafted</option>
+                <option value="Glossy Display Condition">
+                  Glossy Display Condition
+                </option>
+                <option value="Vintage Condition">Vintage Condition</option>
+                <option value="Fantasy Oversized Condition">
+                  Fantasy Oversized Condition
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-product-placement">Product Placement</label>
+              <select
+                id="input-product-placement"
+                name="productPlacement"
+                data-key="productPlacement"
+                data-category="product"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Foreground Hero Position" selected>
+                  Foreground Hero Position
+                </option>
+                <option value="Centered Product Display">
+                  Centered Product Display
+                </option>
+                <option value="Held by Character">Held by Character</option>
+                <option value="Product in Use">Product in Use</option>
+                <option value="Vanity Display">Vanity Display</option>
+                <option value="Retail Shelf">Retail Shelf</option>
+                <option value="Boutique Display">Boutique Display</option>
+                <option value="Floating Arrangement">
+                  Floating Arrangement
+                </option>
+                <option value="Flat Lay">Flat Lay</option>
+                <option value="Pedestal Display">Pedestal Display</option>
+                <option value="Surrounded by Ingredients">
+                  Surrounded by Ingredients
+                </option>
+                <option value="Integrated into Environment">
+                  Integrated into Environment
+                </option>
+              </select>
+            </div>
+
+            <div class="field field--wide">
+              <label for="input-product-label-text">
+                Product Label Text
+              </label>
+              <input
+                id="input-product-label-text"
+                name="productLabelText"
+                type="text"
+                data-key="productLabelText"
+                data-category="product"
+                data-lockable="true"
+                maxlength="120"
+                placeholder="Enter exact wording that must appear."
+              >
+            </div>
+
+            <div class="field field--wide">
+              <label for="input-product-notes">Product Notes</label>
+              <textarea
+                id="input-product-notes"
+                name="productNotes"
+                data-key="productNotes"
+                data-category="product"
+                data-lockable="true"
+                maxlength="500"
+                rows="4"
+                placeholder="Add product, packaging, material, or display details."
+              ></textarea>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section
+        id="studio-style"
+        class="studio-panel"
+        role="tabpanel"
+        aria-labelledby="tab-style"
+        data-studio-panel="style"
+        hidden
+      >
+        <div class="studio-heading">
+          <div>
+            <p class="section-eyebrow">Studio 3</p>
+            <h2>Style Studio</h2>
+            <p>Choose the artistic style, realism, detail, and finish.</p>
+          </div>
+        </div>
+
+        <details
+          id="category-style"
+          class="category-card"
+          data-category="style"
+          open
+        >
+          <summary class="category-summary">
+            <span>Style</span>
+            <span class="category-status" data-category-status="style">
+              Required
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-style"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="style"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="randomize-style"
+              type="button"
+              class="button button--tool"
+              data-action="randomize-category"
+              data-category="style"
+              data-randomizable="true"
+            >
+              Randomize
+            </button>
+
+            <button
+              id="clear-style"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="style"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <div class="field">
+              <label for="input-style-family">Style Family</label>
+              <select
+                id="input-style-family"
+                name="styleFamily"
+                data-key="styleFamily"
+                data-category="style"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Photography and Realism">
+                  Photography and Realism
+                </option>
+                <option value="3D and Digital Art" selected>
+                  3D and Digital Art
+                </option>
+                <option value="Illustration">Illustration</option>
+                <option value="Cartoon and Character Art">
+                  Cartoon and Character Art
+                </option>
+                <option value="Fine Art">Fine Art</option>
+                <option value="Graphic and Vector Art">
+                  Graphic and Vector Art
+                </option>
+                <option value="Editorial and Advertising">
+                  Editorial and Advertising
+                </option>
+                <option value="Fantasy and Surreal">
+                  Fantasy and Surreal
+                </option>
+                <option value="Retro and Vintage">Retro and Vintage</option>
+                <option value="Handmade and Craft">Handmade and Craft</option>
+                <option value="Experimental">Experimental</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-visual-style">Main Visual Style</label>
+              <select
+                id="input-visual-style"
+                name="visualStyle"
+                data-key="visualStyle"
+                data-category="style"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Hyperrealistic Photography">
+                  Hyperrealistic Photography
+                </option>
+                <option value="Photorealistic Commercial Photography">
+                  Photorealistic Commercial Photography
+                </option>
+                <option value="Glossy 3D Cartoon Realism" selected>
+                  Glossy 3D Cartoon Realism
+                </option>
+                <option value="Hyper-Realistic Cartoon Illustration">
+                  Hyper-Realistic Cartoon Illustration
+                </option>
+                <option value="Fashion Doll Illustration">
+                  Fashion Doll Illustration
+                </option>
+                <option value="Chibi Illustration">Chibi Illustration</option>
+                <option value="Designer Vinyl Toy">Designer Vinyl Toy</option>
+                <option value="Collectible Figure Render">
+                  Collectible Figure Render
+                </option>
+                <option value="Plush Toy Style">Plush Toy Style</option>
+                <option value="Airbrushed Digital Illustration">
+                  Airbrushed Digital Illustration
+                </option>
+                <option value="Luxury Fashion Editorial">
+                  Luxury Fashion Editorial
+                </option>
+                <option value="Beauty Campaign Photography">
+                  Beauty Campaign Photography
+                </option>
+                <option value="Kawaii Illustration">Kawaii Illustration</option>
+                <option value="Clean Vector Illustration">
+                  Clean Vector Illustration
+                </option>
+                <option value="Sticker Art">Sticker Art</option>
+                <option value="Watercolor Illustration">
+                  Watercolor Illustration
+                </option>
+                <option value="Storybook Illustration">
+                  Storybook Illustration
+                </option>
+                <option value="Comic Art">Comic Art</option>
+                <option value="Anime-Inspired Illustration">
+                  Anime-Inspired Illustration
+                </option>
+                <option value="Clay Art">Clay Art</option>
+                <option value="Paper Craft">Paper Craft</option>
+                <option value="Pixel Art">Pixel Art</option>
+                <option value="Pop Art">Pop Art</option>
+                <option value="Retro Advertising">Retro Advertising</option>
+                <option value="Fantasy Illustration">
+                  Fantasy Illustration
+                </option>
+                <option value="Cinematic Concept Art">
+                  Cinematic Concept Art
+                </option>
+                <option value="Minimal Product Photography">
+                  Minimal Product Photography
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-realism-level">Realism Level</label>
+              <select
+                id="input-realism-level"
+                name="realismLevel"
+                data-key="realismLevel"
+                data-category="style"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Fully Photorealistic">
+                  Fully Photorealistic
+                </option>
+                <option value="Mostly Realistic">Mostly Realistic</option>
+                <option value="Stylized Realism" selected>
+                  Stylized Realism
+                </option>
+                <option value="Balanced Stylization">
+                  Balanced Stylization
+                </option>
+                <option value="Highly Stylized">Highly Stylized</option>
+                <option value="Cartoon">Cartoon</option>
+                <option value="Graphic">Graphic</option>
+              </select>
+            </div>
+
+            <fieldset
+              id="input-visual-finish"
+              class="field field--wide chip-field"
+              data-key="visualFinish"
+              data-category="style"
+              data-max-selections="4"
+              data-lockable="true"
+              data-randomizable="true"
+            >
+              <legend>Visual Finish</legend>
+              <p class="field-note">Select up to 4.</p>
+              <div class="chip-group">
+                <button type="button" class="chip selected" data-value="Commercial Polish" aria-pressed="true">Commercial Polish</button>
+                <button type="button" class="chip" data-value="Glossy Finish" aria-pressed="false">Glossy Finish</button>
+                <button type="button" class="chip" data-value="Matte Finish" aria-pressed="false">Matte Finish</button>
+                <button type="button" class="chip" data-value="Airbrushed Finish" aria-pressed="false">Airbrushed Finish</button>
+                <button type="button" class="chip" data-value="Soft Glow" aria-pressed="false">Soft Glow</button>
+                <button type="button" class="chip" data-value="Luminous Highlights" aria-pressed="false">Luminous Highlights</button>
+                <button type="button" class="chip" data-value="Metallic Shine" aria-pressed="false">Metallic Shine</button>
+                <button type="button" class="chip" data-value="Crystal Sparkle" aria-pressed="false">Crystal Sparkle</button>
+                <button type="button" class="chip" data-value="Rhinestone Glam" aria-pressed="false">Rhinestone Glam</button>
+                <button type="button" class="chip" data-value="Natural Film Grain" aria-pressed="false">Natural Film Grain</button>
+                <button type="button" class="chip" data-value="Clean Vector Finish" aria-pressed="false">Clean Vector Finish</button>
+                <button type="button" class="chip" data-value="Hand-Painted Texture" aria-pressed="false">Hand-Painted Texture</button>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="input-line-treatment">Line Treatment</label>
+              <select
+                id="input-line-treatment"
+                name="lineTreatment"
+                data-key="lineTreatment"
+                data-category="style"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="None">None</option>
+                <option value="Clean Defined Edges" selected>
+                  Clean Defined Edges
+                </option>
+                <option value="Bold Outlines">Bold Outlines</option>
+                <option value="Soft Outlines">Soft Outlines</option>
+                <option value="Fine Linework">Fine Linework</option>
+                <option value="No Visible Outlines">No Visible Outlines</option>
+                <option value="Hand-Drawn Lines">Hand-Drawn Lines</option>
+                <option value="Vector-Clean Lines">Vector-Clean Lines</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-detail-level">Detail Level</label>
+              <select
+                id="input-detail-level"
+                name="detailLevel"
+                data-key="detailLevel"
+                data-category="style"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Clean and Simple">Clean and Simple</option>
+                <option value="Moderately Detailed">Moderately Detailed</option>
+                <option value="Highly Detailed" selected>
+                  Highly Detailed
+                </option>
+                <option value="Intricate">Intricate</option>
+                <option value="Premium Micro-Detail">
+                  Premium Micro-Detail
+                </option>
+              </select>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section
+        id="studio-environment"
+        class="studio-panel"
+        role="tabpanel"
+        aria-labelledby="tab-environment"
+        data-studio-panel="environment"
+        hidden
+      >
+        <div class="studio-heading">
+          <div>
+            <p class="section-eyebrow">Studio 4</p>
+            <h2>Environment Studio</h2>
+            <p>Build the setting, palette, lighting, props, and mood.</p>
+          </div>
+        </div>
+
+        <details
+          id="category-environment"
+          class="category-card"
+          data-category="environment"
+          open
+        >
+          <summary class="category-summary">
+            <span>Environment</span>
+            <span class="category-status" data-category-status="environment">
+              Optional
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-environment"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="environment"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="randomize-environment"
+              type="button"
+              class="button button--tool"
+              data-action="randomize-category"
+              data-category="environment"
+              data-randomizable="true"
+            >
+              Randomize
+            </button>
+
+            <button
+              id="clear-environment"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="environment"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <div class="field">
+              <label for="input-environment-type">Environment Type</label>
+              <select
+                id="input-environment-type"
+                name="environmentType"
+                data-key="environmentType"
+                data-category="environment"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="None">None</option>
+                <option value="Studio Scene" selected>Studio Scene</option>
+                <option value="Product Studio">Product Studio</option>
+                <option value="Beauty Vanity">Beauty Vanity</option>
+                <option value="Boutique">Boutique</option>
+                <option value="Retail Store">Retail Store</option>
+                <option value="Bedroom">Bedroom</option>
+                <option value="Living Room">Living Room</option>
+                <option value="Kitchen">Kitchen</option>
+                <option value="Café">Café</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="City Street">City Street</option>
+                <option value="Rooftop">Rooftop</option>
+                <option value="Beach">Beach</option>
+                <option value="Tropical Island">Tropical Island</option>
+                <option value="Garden">Garden</option>
+                <option value="Fantasy World">Fantasy World</option>
+                <option value="Candy World">Candy World</option>
+                <option value="Futuristic City">Futuristic City</option>
+                <option value="Luxury Interior">Luxury Interior</option>
+                <option value="Sports Venue">Sports Venue</option>
+                <option value="Career Workplace">Career Workplace</option>
+                <option value="Holiday Scene">Holiday Scene</option>
+                <option value="Abstract Brand World">
+                  Abstract Brand World
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-setting">Setting</label>
+              <select
+                id="input-setting"
+                name="setting"
+                data-key="setting"
+                data-category="environment"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Clean Creative Studio" selected>
+                  Clean Creative Studio
+                </option>
+                <option value="White Photography Studio">
+                  White Photography Studio
+                </option>
+                <option value="Neutral Product Studio">
+                  Neutral Product Studio
+                </option>
+                <option value="Luxury Vanity">Luxury Vanity</option>
+                <option value="Glam Boutique">Glam Boutique</option>
+                <option value="Modern Retail Display">
+                  Modern Retail Display
+                </option>
+                <option value="Cozy Interior">Cozy Interior</option>
+                <option value="High-End Interior">High-End Interior</option>
+                <option value="Urban Environment">Urban Environment</option>
+                <option value="Tropical Environment">
+                  Tropical Environment
+                </option>
+                <option value="Magical Environment">
+                  Magical Environment
+                </option>
+                <option value="Retro Environment">Retro Environment</option>
+                <option value="Futuristic Environment">
+                  Futuristic Environment
+                </option>
+                <option value="Seasonal Environment">
+                  Seasonal Environment
+                </option>
+                <option value="Custom Setting">Custom Setting</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-background-treatment">
+                Background Treatment
+              </label>
+              <select
+                id="input-background-treatment"
+                name="backgroundTreatment"
+                data-key="backgroundTreatment"
+                data-category="environment"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Clean Neutral Background" selected>
+                  Clean Neutral Background
+                </option>
+                <option value="White Background">White Background</option>
+                <option value="Black Background">Black Background</option>
+                <option value="Transparent-Look Isolated Background">
+                  Transparent-Look Isolated Background
+                </option>
+                <option value="Soft Gradient">Soft Gradient</option>
+                <option value="Brand-Colored Gradient">
+                  Brand-Colored Gradient
+                </option>
+                <option value="Textured Studio Background">
+                  Textured Studio Background
+                </option>
+                <option value="Detailed Environment">
+                  Detailed Environment
+                </option>
+                <option value="Blurred Environment">
+                  Blurred Environment
+                </option>
+                <option value="Luxury Interior">Luxury Interior</option>
+                <option value="Fantasy Background">Fantasy Background</option>
+                <option value="Patterned Background">Patterned Background</option>
+                <option value="Product-Coordinated Background">
+                  Product-Coordinated Background
+                </option>
+              </select>
+            </div>
+
+            <fieldset
+              id="input-environment-props"
+              class="field field--wide chip-field"
+              data-key="environmentProps"
+              data-category="environment"
+              data-max-selections="8"
+              data-lockable="true"
+              data-randomizable="true"
+            >
+              <legend>Environment Props</legend>
+              <p class="field-note">Select up to 8.</p>
+              <div class="chip-group">
+                <button type="button" class="chip" data-value="None" aria-pressed="false">None</button>
+                <button type="button" class="chip" data-value="Product Packages" aria-pressed="false">Product Packages</button>
+                <button type="button" class="chip" data-value="Ingredients" aria-pressed="false">Ingredients</button>
+                <button type="button" class="chip" data-value="Flowers" aria-pressed="false">Flowers</button>
+                <button type="button" class="chip" data-value="Balloons" aria-pressed="false">Balloons</button>
+                <button type="button" class="chip" data-value="Confetti" aria-pressed="false">Confetti</button>
+                <button type="button" class="chip" data-value="Candy" aria-pressed="false">Candy</button>
+                <button type="button" class="chip" data-value="Food Items" aria-pressed="false">Food Items</button>
+                <button type="button" class="chip" data-value="Furniture" aria-pressed="false">Furniture</button>
+                <button type="button" class="chip" data-value="Beauty Tools" aria-pressed="false">Beauty Tools</button>
+                <button type="button" class="chip" data-value="Shopping Bags" aria-pressed="false">Shopping Bags</button>
+                <button type="button" class="chip" data-value="Display Shelves" aria-pressed="false">Display Shelves</button>
+                <button type="button" class="chip" data-value="Neon Signs" aria-pressed="false">Neon Signs</button>
+                <button type="button" class="chip" data-value="Crystals" aria-pressed="false">Crystals</button>
+                <button type="button" class="chip" data-value="Sparkles" aria-pressed="false">Sparkles</button>
+                <button type="button" class="chip" data-value="Plants" aria-pressed="false">Plants</button>
+                <button type="button" class="chip" data-value="Seasonal Décor" aria-pressed="false">Seasonal Décor</button>
+                <button type="button" class="chip" data-value="Technology Props" aria-pressed="false">Technology Props</button>
+                <button type="button" class="chip" data-value="Sports Props" aria-pressed="false">Sports Props</button>
+                <button type="button" class="chip" data-value="Custom Props" aria-pressed="false">Custom Props</button>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="input-atmosphere">Atmosphere</label>
+              <select
+                id="input-atmosphere"
+                name="atmosphere"
+                data-key="atmosphere"
+                data-category="environment"
+                data-lockable="true"
+                data-randomizable="true"
+              >
+                <option value="Polished and Inviting" selected>
+                  Polished and Inviting
+                </option>
+                <option value="Calm and Cozy">Calm and Cozy</option>
+                <option value="Dreamy">Dreamy</option>
+                <option value="Glamorous">Glamorous</option>
+                <option value="Luxurious">Luxurious</option>
+                <option value="Playful">Playful</option>
+                <option value="Energetic">Energetic</option>
+                <option value="Bold">Bold</option>
+                <option value="Romantic">Romantic</option>
+                <option value="Mysterious">Mysterious</option>
+                <option value="Whimsical">Whimsical</option>
+                <option value="Futuristic">Futuristic</option>
+                <option value="Nostalgic">Nostalgic</option>
+                <option value="Fresh and Clean">Fresh and Clean</option>
+                <option value="Warm and Comfortable">
+                  Warm and Comfortable
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-scene-density">Scene Density</label>
+              <select
+                id="input-scene-density"
+                name="sceneDensity"
+                data-key="sceneDensity"
+                data-category="environment"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Minimal">Minimal</option>
+                <option value="Clean">Clean</option>
+                <option value="Balanced" selected>Balanced</option>
+                <option value="Richly Styled">Richly Styled</option>
+                <option value="Detailed">Detailed</option>
+                <option value="Maximalist">Maximalist</option>
+              </select>
+            </div>
+          </div>
+        </details>
+
+        <details
+          id="category-color-lighting"
+          class="category-card"
+          data-category="colorLighting"
+          open
+        >
+          <summary class="category-summary">
+            <span>Color and Lighting</span>
+            <span class="category-status" data-category-status="colorLighting">
+              Required
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-colorLighting"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="colorLighting"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="randomize-colorLighting"
+              type="button"
+              class="button button--tool"
+              data-action="randomize-category"
+              data-category="colorLighting"
+              data-randomizable="true"
+            >
+              Randomize
+            </button>
+
+            <button
+              id="clear-colorLighting"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="colorLighting"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <div class="field">
+              <label for="input-color-strategy">Color Strategy</label>
+              <select
+                id="input-color-strategy"
+                name="colorStrategy"
+                data-key="colorStrategy"
+                data-category="colorLighting"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Brand-Coordinated Palette" selected>
+                  Brand-Coordinated Palette
+                </option>
+                <option value="Product-Matched Palette">
+                  Product-Matched Palette
+                </option>
+                <option value="Monochromatic">Monochromatic</option>
+                <option value="Complementary Colors">
+                  Complementary Colors
+                </option>
+                <option value="Analogous Colors">Analogous Colors</option>
+                <option value="Pastel Palette">Pastel Palette</option>
+                <option value="Bold High Contrast">Bold High Contrast</option>
+                <option value="Neutral Luxury">Neutral Luxury</option>
+                <option value="Retro Palette">Retro Palette</option>
+                <option value="Seasonal Palette">Seasonal Palette</option>
+                <option value="Custom Palette">Custom Palette</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-main-palette">Main Palette</label>
+              <select
+                id="input-main-palette"
+                name="mainPalette"
+                data-key="mainPalette"
+                data-category="colorLighting"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Custom Brand Colors" selected>
+                  Custom Brand Colors
+                </option>
+                <option value="Purple, Turquoise, Rose Gold, and Cream">
+                  Purple, Turquoise, Rose Gold, and Cream
+                </option>
+                <option value="Pink, Lavender, Orange, and Black">
+                  Pink, Lavender, Orange, and Black
+                </option>
+                <option value="Black, White, and Gold">
+                  Black, White, and Gold
+                </option>
+                <option value="Tiffany Blue and Cream">
+                  Tiffany Blue and Cream
+                </option>
+                <option value="Red, White, and Blue">
+                  Red, White, and Blue
+                </option>
+                <option value="Chocolate, Caramel, and Gold">
+                  Chocolate, Caramel, and Gold
+                </option>
+                <option value="Orange, Brown, Yellow, and Cream">
+                  Orange, Brown, Yellow, and Cream
+                </option>
+                <option value="Green, White, and Gold">
+                  Green, White, and Gold
+                </option>
+                <option value="Blue, Silver, and White">
+                  Blue, Silver, and White
+                </option>
+                <option value="Rainbow Bright">Rainbow Bright</option>
+                <option value="Soft Pastels">Soft Pastels</option>
+                <option value="Jewel Tones">Jewel Tones</option>
+                <option value="Earth Tones">Earth Tones</option>
+                <option value="Neon Colors">Neon Colors</option>
+                <option value="Neutral Tones">Neutral Tones</option>
+              </select>
+            </div>
+
+            <div class="field field--wide">
+              <label for="input-custom-colors">Custom Colors</label>
+              <input
+                id="input-custom-colors"
+                name="customColors"
+                type="text"
+                data-key="customColors"
+                data-category="colorLighting"
+                data-lockable="true"
+                maxlength="180"
+                placeholder="Example: dark purple, turquoise, rose gold, cream"
+              >
+            </div>
+
+            <div class="field">
+              <label for="input-lighting-style">Lighting Style</label>
+              <select
+                id="input-lighting-style"
+                name="lightingStyle"
+                data-key="lightingStyle"
+                data-category="colorLighting"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Soft Studio Lighting" selected>
+                  Soft Studio Lighting
+                </option>
+                <option value="Beauty Lighting">Beauty Lighting</option>
+                <option value="Glam Lighting">Glam Lighting</option>
+                <option value="Cinematic Lighting">Cinematic Lighting</option>
+                <option value="Natural Window Light">
+                  Natural Window Light
+                </option>
+                <option value="Golden Hour">Golden Hour</option>
+                <option value="Colored Stage Lighting">
+                  Colored Stage Lighting
+                </option>
+                <option value="Neon Lighting">Neon Lighting</option>
+                <option value="High-Key Lighting">High-Key Lighting</option>
+                <option value="Low-Key Lighting">Low-Key Lighting</option>
+                <option value="Rim Lighting">Rim Lighting</option>
+                <option value="Product Spotlight">Product Spotlight</option>
+                <option value="Dreamy Glow">Dreamy Glow</option>
+                <option value="Dramatic Contrast">Dramatic Contrast</option>
+                <option value="Even Commercial Lighting">
+                  Even Commercial Lighting
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-light-quality">Light Quality</label>
+              <select
+                id="input-light-quality"
+                name="lightQuality"
+                data-key="lightQuality"
+                data-category="colorLighting"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Diffused" selected>Diffused</option>
+                <option value="Soft">Soft</option>
+                <option value="Bright">Bright</option>
+                <option value="Warm">Warm</option>
+                <option value="Cool">Cool</option>
+                <option value="Dramatic">Dramatic</option>
+                <option value="Directional">Directional</option>
+                <option value="Glowing">Glowing</option>
+                <option value="High Contrast">High Contrast</option>
+                <option value="Natural">Natural</option>
+              </select>
+            </div>
+
+            <fieldset
+              id="input-mood"
+              class="field field--wide chip-field"
+              data-key="mood"
+              data-category="colorLighting"
+              data-max-selections="3"
+              data-lockable="true"
+              data-randomizable="true"
+            >
+              <legend>Mood</legend>
+              <p class="field-note">Select up to 3.</p>
+              <div class="chip-group">
+                <button type="button" class="chip selected" data-value="Polished" aria-pressed="true">Polished</button>
+                <button type="button" class="chip" data-value="Luxurious" aria-pressed="false">Luxurious</button>
+                <button type="button" class="chip" data-value="Glamorous" aria-pressed="false">Glamorous</button>
+                <button type="button" class="chip" data-value="Playful" aria-pressed="false">Playful</button>
+                <button type="button" class="chip" data-value="Cute" aria-pressed="false">Cute</button>
+                <button type="button" class="chip" data-value="Bold" aria-pressed="false">Bold</button>
+                <button type="button" class="chip" data-value="Cozy" aria-pressed="false">Cozy</button>
+                <button type="button" class="chip" data-value="Dreamy" aria-pressed="false">Dreamy</button>
+                <button type="button" class="chip" data-value="Calm" aria-pressed="false">Calm</button>
+                <button type="button" class="chip" data-value="Energetic" aria-pressed="false">Energetic</button>
+                <button type="button" class="chip" data-value="Romantic" aria-pressed="false">Romantic</button>
+                <button type="button" class="chip" data-value="Edgy" aria-pressed="false">Edgy</button>
+                <button type="button" class="chip" data-value="Whimsical" aria-pressed="false">Whimsical</button>
+                <button type="button" class="chip" data-value="Sophisticated" aria-pressed="false">Sophisticated</button>
+                <button type="button" class="chip" data-value="Nostalgic" aria-pressed="false">Nostalgic</button>
+                <button type="button" class="chip" data-value="Futuristic" aria-pressed="false">Futuristic</button>
+              </div>
+            </fieldset>
+          </div>
+        </details>
+      </section>
+
+      <section
+        id="studio-composition"
+        class="studio-panel"
+        role="tabpanel"
+        aria-labelledby="tab-composition"
+        data-studio-panel="composition"
+        hidden
+      >
+        <div class="studio-heading">
+          <div>
+            <p class="section-eyebrow">Studio 5</p>
+            <h2>Composition Studio</h2>
+            <p>Control pose, camera, framing, perspective, and format.</p>
+          </div>
+        </div>
+
+        <details
+          id="category-composition"
+          class="category-card"
+          data-category="composition"
+          open
+        >
+          <summary class="category-summary">
+            <span>Composition</span>
+            <span class="category-status" data-category-status="composition">
+              Required
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-composition"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="composition"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="randomize-composition"
+              type="button"
+              class="button button--tool"
+              data-action="randomize-category"
+              data-category="composition"
+              data-randomizable="true"
+            >
+              Randomize
+            </button>
+
+            <button
+              id="clear-composition"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="composition"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <div class="field">
+              <label for="input-pose-arrangement">
+                Pose or Arrangement
+              </label>
+              <select
+                id="input-pose-arrangement"
+                name="poseArrangement"
+                data-key="poseArrangement"
+                data-category="composition"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Confident Hero Pose" selected>
+                  Confident Hero Pose
+                </option>
+                <option value="Standing Pose">Standing Pose</option>
+                <option value="Seated Pose">Seated Pose</option>
+                <option value="Walking Pose">Walking Pose</option>
+                <option value="Dancing Pose">Dancing Pose</option>
+                <option value="Kneeling Pose">Kneeling Pose</option>
+                <option value="Squatting Pose">Squatting Pose</option>
+                <option value="Product-in-Use Pose">
+                  Product-in-Use Pose
+                </option>
+                <option value="Holding Product">Holding Product</option>
+                <option value="Over-the-Shoulder Pose">
+                  Over-the-Shoulder Pose
+                </option>
+                <option value="Beauty Portrait Pose">
+                  Beauty Portrait Pose
+                </option>
+                <option value="Editorial Pose">Editorial Pose</option>
+                <option value="Playful Character Pose">
+                  Playful Character Pose
+                </option>
+                <option value="Action Pose">Action Pose</option>
+                <option value="Flat-Lay Arrangement">
+                  Flat-Lay Arrangement
+                </option>
+                <option value="Product Pedestal Arrangement">
+                  Product Pedestal Arrangement
+                </option>
+                <option value="Floating Product Arrangement">
+                  Floating Product Arrangement
+                </option>
+                <option value="Coordinated Group Arrangement">
+                  Coordinated Group Arrangement
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-camera-view">Camera View</label>
+              <select
+                id="input-camera-view"
+                name="cameraView"
+                data-key="cameraView"
+                data-category="composition"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Front View" selected>Front View</option>
+                <option value="Three-Quarter View">Three-Quarter View</option>
+                <option value="Side View">Side View</option>
+                <option value="Rear Three-Quarter View">
+                  Rear Three-Quarter View
+                </option>
+                <option value="Overhead View">Overhead View</option>
+                <option value="Low-Angle View">Low-Angle View</option>
+                <option value="High-Angle View">High-Angle View</option>
+                <option value="Close-Up View">Close-Up View</option>
+                <option value="Wide View">Wide View</option>
+                <option value="Product Detail View">
+                  Product Detail View
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-framing">Framing</label>
+              <select
+                id="input-framing"
+                name="framing"
+                data-key="framing"
+                data-category="composition"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Full Subject" selected>Full Subject</option>
+                <option value="Full Body">Full Body</option>
+                <option value="Three-Quarter Body">Three-Quarter Body</option>
+                <option value="Half Body">Half Body</option>
+                <option value="Waist Up">Waist Up</option>
+                <option value="Beauty Close-Up">Beauty Close-Up</option>
+                <option value="Product Close-Up">Product Close-Up</option>
+                <option value="Wide Environmental Shot">
+                  Wide Environmental Shot
+                </option>
+                <option value="Isolated Product">Isolated Product</option>
+                <option value="Collection Layout">Collection Layout</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-perspective">Perspective</label>
+              <select
+                id="input-perspective"
+                name="perspective"
+                data-key="perspective"
+                data-category="composition"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Eye Level" selected>Eye Level</option>
+                <option value="Slight Low Angle">Slight Low Angle</option>
+                <option value="Dramatic Low Angle">Dramatic Low Angle</option>
+                <option value="Slight High Angle">Slight High Angle</option>
+                <option value="Overhead">Overhead</option>
+                <option value="Isometric">Isometric</option>
+                <option value="Macro Perspective">Macro Perspective</option>
+                <option value="Wide-Angle Perspective">
+                  Wide-Angle Perspective
+                </option>
+                <option value="Flat Graphic Perspective">
+                  Flat Graphic Perspective
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-composition-style">
+                Composition Style
+              </label>
+              <select
+                id="input-composition-style"
+                name="compositionStyle"
+                data-key="compositionStyle"
+                data-category="composition"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Centered Balanced Composition" selected>
+                  Centered Balanced Composition
+                </option>
+                <option value="Symmetrical Composition">
+                  Symmetrical Composition
+                </option>
+                <option value="Rule-of-Thirds Composition">
+                  Rule-of-Thirds Composition
+                </option>
+                <option value="Editorial Composition">
+                  Editorial Composition
+                </option>
+                <option value="Dynamic Diagonal Composition">
+                  Dynamic Diagonal Composition
+                </option>
+                <option value="Layered Depth Composition">
+                  Layered Depth Composition
+                </option>
+                <option value="Minimal Composition">
+                  Minimal Composition
+                </option>
+                <option value="Product Hero Composition">
+                  Product Hero Composition
+                </option>
+                <option value="Character-and-Product Composition">
+                  Character-and-Product Composition
+                </option>
+                <option value="Poster Composition">Poster Composition</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-focal-emphasis">Focal Emphasis</label>
+              <select
+                id="input-focal-emphasis"
+                name="focalEmphasis"
+                data-key="focalEmphasis"
+                data-category="composition"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Main Subject" selected>Main Subject</option>
+                <option value="Character">Character</option>
+                <option value="Product">Product</option>
+                <option value="Character and Product Equally">
+                  Character and Product Equally
+                </option>
+                <option value="Environment">Environment</option>
+                <option value="Packaging">Packaging</option>
+                <option value="Face and Beauty Details">
+                  Face and Beauty Details
+                </option>
+                <option value="Outfit and Accessories">
+                  Outfit and Accessories
+                </option>
+                <option value="Collection">Collection</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-aspect-ratio">Aspect Ratio</label>
+              <select
+                id="input-aspect-ratio"
+                name="aspectRatio"
+                data-key="aspectRatio"
+                data-category="composition"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="1:1 Square" selected>1:1 Square</option>
+                <option value="4:5 Portrait">4:5 Portrait</option>
+                <option value="3:4 Portrait">3:4 Portrait</option>
+                <option value="9:16 Vertical">9:16 Vertical</option>
+                <option value="16:9 Landscape">16:9 Landscape</option>
+                <option value="21:9 Wide">21:9 Wide</option>
+                <option value="11:14 Portrait">11:14 Portrait</option>
+              </select>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section
+        id="studio-finish"
+        class="studio-panel"
+        role="tabpanel"
+        aria-labelledby="tab-finish"
+        data-studio-panel="finish"
+        hidden
+      >
+        <div class="studio-heading">
+          <div>
+            <p class="section-eyebrow">Studio 6</p>
+            <h2>Finish Studio</h2>
+            <p>Add materials, quality protection, exact text, and final polish.</p>
+          </div>
+        </div>
+
+        <details
+          id="category-finish"
+          class="category-card"
+          data-category="finish"
+          open
+        >
+          <summary class="category-summary">
+            <span>Finish and Quality</span>
+            <span class="category-status" data-category-status="finish">
+              Required
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-finish"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="finish"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="randomize-finish"
+              type="button"
+              class="button button--tool"
+              data-action="randomize-category"
+              data-category="finish"
+              data-randomizable="true"
+            >
+              Randomize
+            </button>
+
+            <button
+              id="clear-finish"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="finish"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <fieldset
+              id="input-texture-direction"
+              class="field field--wide chip-field"
+              data-key="textureDirection"
+              data-category="finish"
+              data-max-selections="4"
+              data-lockable="true"
+              data-randomizable="true"
+            >
+              <legend>Texture Direction</legend>
+              <p class="field-note">Select up to 4.</p>
+              <div class="chip-group">
+                <button type="button" class="chip selected" data-value="Smooth Commercial Finish" aria-pressed="true">Smooth Commercial Finish</button>
+                <button type="button" class="chip" data-value="Realistic Skin Texture" aria-pressed="false">Realistic Skin Texture</button>
+                <button type="button" class="chip" data-value="Glossy Plastic" aria-pressed="false">Glossy Plastic</button>
+                <button type="button" class="chip" data-value="Soft Fabric" aria-pressed="false">Soft Fabric</button>
+                <button type="button" class="chip" data-value="Metallic Surface" aria-pressed="false">Metallic Surface</button>
+                <button type="button" class="chip" data-value="Crystal Texture" aria-pressed="false">Crystal Texture</button>
+                <button type="button" class="chip" data-value="Rhinestone Texture" aria-pressed="false">Rhinestone Texture</button>
+                <button type="button" class="chip" data-value="Paper Texture" aria-pressed="false">Paper Texture</button>
+                <button type="button" class="chip" data-value="Handcrafted Texture" aria-pressed="false">Handcrafted Texture</button>
+                <button type="button" class="chip" data-value="Natural Product Texture" aria-pressed="false">Natural Product Texture</button>
+                <button type="button" class="chip" data-value="Film Grain" aria-pressed="false">Film Grain</button>
+                <button type="button" class="chip" data-value="Painted Texture" aria-pressed="false">Painted Texture</button>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="input-render-quality">Render Quality</label>
+              <select
+                id="input-render-quality"
+                name="renderQuality"
+                data-key="renderQuality"
+                data-category="finish"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Clean Draft Quality">
+                  Clean Draft Quality
+                </option>
+                <option value="Polished Quality">Polished Quality</option>
+                <option value="Premium Commercial Quality" selected>
+                  Premium Commercial Quality
+                </option>
+                <option value="Editorial Quality">Editorial Quality</option>
+                <option value="Advertising Campaign Quality">
+                  Advertising Campaign Quality
+                </option>
+                <option value="Collectible Product Render Quality">
+                  Collectible Product Render Quality
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-text-requirement">Text Requirement</label>
+              <select
+                id="input-text-requirement"
+                name="textRequirement"
+                data-key="textRequirement"
+                data-category="finish"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="No Text Required" selected>
+                  No Text Required
+                </option>
+                <option value="Exact Product Name">Exact Product Name</option>
+                <option value="Exact Brand-Inspired Name">
+                  Exact Brand-Inspired Name
+                </option>
+                <option value="Exact Short Phrase">Exact Short Phrase</option>
+                <option value="Packaging Label Text">
+                  Packaging Label Text
+                </option>
+                <option value="Sign or Poster Text">
+                  Sign or Poster Text
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-anatomy-guidance">
+                Anatomy Guidance
+              </label>
+              <select
+                id="input-anatomy-guidance"
+                name="anatomyGuidance"
+                data-key="anatomyGuidance"
+                data-category="finish"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Accurate Natural Anatomy" selected>
+                  Accurate Natural Anatomy
+                </option>
+                <option value="Accurate Doll Anatomy">
+                  Accurate Doll Anatomy
+                </option>
+                <option value="Chibi Proportions with Clean Anatomy">
+                  Chibi Proportions with Clean Anatomy
+                </option>
+                <option value="Product Only, No Anatomy">
+                  Product Only, No Anatomy
+                </option>
+                <option value="Group Anatomy Consistency">
+                  Group Anatomy Consistency
+                </option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="input-product-visibility">
+                Product Visibility
+              </label>
+              <select
+                id="input-product-visibility"
+                name="productVisibility"
+                data-key="productVisibility"
+                data-category="finish"
+                data-lockable="true"
+                data-randomizable="true"
+                required
+              >
+                <option value="Fully Visible" selected>Fully Visible</option>
+                <option value="Mostly Visible">Mostly Visible</option>
+                <option value="Close-Up Detail">Close-Up Detail</option>
+                <option value="Integrated into Scene">
+                  Integrated into Scene
+                </option>
+                <option value="Held Clearly by Character">
+                  Held Clearly by Character
+                </option>
+              </select>
+            </div>
+
+            <fieldset
+              id="input-negative-guidance"
+              class="field field--wide chip-field"
+              data-key="negativeGuidance"
+              data-category="finish"
+              data-max-selections="8"
+              data-lockable="true"
+              data-randomizable="true"
+            >
+              <legend>Negative Guidance</legend>
+              <p class="field-note">Select up to 8.</p>
+              <div class="chip-group">
+                <button type="button" class="chip selected" data-value="Standard Quality Protection" aria-pressed="true">Standard Quality Protection</button>
+                <button type="button" class="chip" data-value="No Distorted Hands" aria-pressed="false">No Distorted Hands</button>
+                <button type="button" class="chip" data-value="Five Fingers Per Hand" aria-pressed="false">Five Fingers Per Hand</button>
+                <button type="button" class="chip" data-value="No Extra Limbs" aria-pressed="false">No Extra Limbs</button>
+                <button type="button" class="chip" data-value="No Duplicate Subjects" aria-pressed="false">No Duplicate Subjects</button>
+                <button type="button" class="chip" data-value="No Cropped Main Subject" aria-pressed="false">No Cropped Main Subject</button>
+                <button type="button" class="chip" data-value="No Blurry Details" aria-pressed="false">No Blurry Details</button>
+                <button type="button" class="chip" data-value="No Warped Packaging" aria-pressed="false">No Warped Packaging</button>
+                <button type="button" class="chip" data-value="No Misspelled Text" aria-pressed="false">No Misspelled Text</button>
+                <button type="button" class="chip" data-value="No Random Extra Text" aria-pressed="false">No Random Extra Text</button>
+                <button type="button" class="chip" data-value="No Watermarks" aria-pressed="false">No Watermarks</button>
+                <button type="button" class="chip" data-value="No Logos Unless Requested" aria-pressed="false">No Logos Unless Requested</button>
+                <button type="button" class="chip" data-value="No Busy Background" aria-pressed="false">No Busy Background</button>
+                <button type="button" class="chip" data-value="No Unbalanced Composition" aria-pressed="false">No Unbalanced Composition</button>
+                <button type="button" class="chip" data-value="No Plastic-Looking Skin" aria-pressed="false">No Plastic-Looking Skin</button>
+                <button type="button" class="chip" data-value="No Unsupported Claims" aria-pressed="false">No Unsupported Claims</button>
+              </div>
+            </fieldset>
+
+            <div class="field field--wide">
+              <label for="input-custom-exclusions">
+                Custom Exclusions
+              </label>
+              <textarea
+                id="input-custom-exclusions"
+                name="customExclusions"
+                data-key="customExclusions"
+                data-category="finish"
+                data-lockable="true"
+                maxlength="300"
+                rows="4"
+                placeholder="Add anything that should not appear."
+              ></textarea>
+            </div>
+          </div>
+        </details>
+
+        <details
+          id="category-custom-guidance"
+          class="category-card"
+          data-category="customGuidance"
+          open
+        >
+          <summary class="category-summary">
+            <span>Custom Guidance</span>
+            <span class="category-status" data-category-status="customGuidance">
+              Optional
+            </span>
+          </summary>
+
+          <div class="category-toolbar">
+            <button
+              id="lock-customGuidance"
+              type="button"
+              class="button button--tool"
+              data-action="toggle-lock"
+              data-category="customGuidance"
+              data-lockable="true"
+              aria-pressed="false"
+            >
+              Lock
+            </button>
+
+            <button
+              id="clear-customGuidance"
+              type="button"
+              class="button button--tool button--danger-outline"
+              data-action="clear-category"
+              data-category="customGuidance"
+            >
+              Clear Category
+            </button>
+          </div>
+
+          <div class="control-grid">
+            <div class="field field--wide">
+              <label for="input-must-include">Must Include</label>
+              <textarea
+                id="input-must-include"
+                name="mustInclude"
+                data-key="mustInclude"
+                data-category="customGuidance"
+                data-lockable="true"
+                maxlength="500"
+                rows="4"
+                placeholder="Add details that must appear in the image."
+              ></textarea>
+            </div>
+
+            <div class="field field--wide">
+              <label for="input-must-avoid">Must Avoid</label>
+              <textarea
+                id="input-must-avoid"
+                name="mustAvoid"
+                data-key="mustAvoid"
+                data-category="customGuidance"
+                data-lockable="true"
+                maxlength="500"
+                rows="4"
+                placeholder="Add details that must not appear."
+              ></textarea>
+            </div>
+
+            <div class="field field--wide">
+              <label for="input-additional-direction">
+                Additional Direction
+              </label>
+              <textarea
+                id="input-additional-direction"
+                name="additionalDirection"
+                data-key="additionalDirection"
+                data-category="customGuidance"
+                data-lockable="true"
+                maxlength="700"
+                rows="5"
+                placeholder="Add any final creative direction."
+              ></textarea>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section
+        id="studio-prompt"
+        class="studio-panel"
+        role="tabpanel"
+        aria-labelledby="tab-prompt"
+        data-studio-panel="prompt"
+        hidden
+      >
+        <div class="studio-heading">
+          <div>
+            <p class="section-eyebrow">Studio 7</p>
+            <h2>Prompt Studio</h2>
+            <p>Generate, review, copy, and manage your recent prompts.</p>
+          </div>
+        </div>
+
+        <div
+          id="validation-summary"
+          class="validation-summary"
+          role="alert"
+          aria-live="assertive"
+          tabindex="-1"
+          hidden
+        >
+          <h3>Please review the highlighted selections before generating your prompt.</h3>
+          <ul id="validation-summary-list"></ul>
+        </div>
+
+        <div class="prompt-action-bar">
+          <button
+            id="button-generate-prompt"
+            type="button"
+            class="button button--primary"
+            data-action="generate"
+          >
+            Generate Prompt
+          </button>
+
+          <button
+            id="button-randomize-all"
+            type="button"
+            class="button button--secondary"
+            data-action="randomize-all"
+          >
+            Randomize
+          </button>
+
+          <button
+            id="button-clear-all"
+            type="button"
+            class="button button--danger-outline"
+            data-action="clear-all"
+          >
+            Clear All
+          </button>
+        </div>
+
+        <div class="prompt-workspace">
+          <article class="output-card">
+            <div class="output-card__header">
+              <div>
+                <p class="section-eyebrow">Generated Image Prompt</p>
+                <h3>Your BrandVerse Prompt</h3>
+              </div>
+
+              <button
+                id="button-copy-prompt"
+                type="button"
+                class="button button--secondary"
+                data-action="copy-prompt"
+                disabled
+              >
+                Copy Prompt
+              </button>
+            </div>
+
+            <p
+              id="update-needed-message"
+              class="update-needed-message"
+              role="status"
+              aria-live="polite"
+              hidden
+            >
+              Selections changed. Generate again to update your prompt.
+            </p>
+
+            <div
+              id="prompt-output"
+              class="prompt-output empty"
+              tabindex="0"
+              aria-live="polite"
+              data-output-state="empty"
+            >
+              Build your concept, then select Generate Prompt.
+            </div>
+          </article>
+
+          <aside
+            id="quality-result"
+            class="quality-card empty"
+            aria-live="polite"
+            data-quality-state="empty"
+          >
+            <p class="section-eyebrow">Prompt Quality Check</p>
+            <h3>Quality Result</h3>
+            <p>Quality results will appear after generation.</p>
+          </aside>
+        </div>
+
+        <section class="history-card" aria-labelledby="history-heading">
+          <div class="history-card__header">
+            <div>
+              <p class="section-eyebrow">Recent Work</p>
+              <h3 id="history-heading">Prompt History</h3>
+            </div>
+          </div>
+
+          <div
+            id="prompt-history"
+            class="prompt-history"
+            aria-live="polite"
+          >
+            <p class="history-empty">No generated prompts yet.</p>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <div
+    id="toast-region"
+    class="toast-region"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+  <div
+    id="confirmation-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="confirmation-modal-title"
+    aria-describedby="confirmation-modal-message"
+    hidden
+  >
+    <div class="modal__overlay" data-action="cancel-modal"></div>
+
+    <div class="modal__content" role="document">
+      <h2 id="confirmation-modal-title">Confirm action</h2>
+      <p id="confirmation-modal-message"></p>
+
+      <div class="modal__actions">
+        <button
+          id="button-modal-cancel"
+          type="button"
+          class="button button--secondary"
+          data-action="cancel-modal"
+        >
+          Cancel
+        </button>
+
+        <button
+          id="button-modal-confirm"
+          type="button"
+          class="button button--danger"
+          data-action="confirm-modal"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer id="app-footer" class="app-footer">
+    ...
+</footer>
+
+<!-- BEGIN Confirmation Modal -->
+
+<div
+    id="confirmation-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="confirmation-modal-title"
+    aria-describedby="confirmation-modal-message"
+    hidden
+>
+
+    <div class="modal__overlay"
+         data-action="cancel-modal">
+    </div>
+
+    <div class="modal__content" role="document">
+
+        <h2 id="confirmation-modal-title">
+            Confirm Action
+        </h2>
+
+        <p id="confirmation-modal-message">
+            Are you sure?
+        </p>
+
+        <div class="modal__actions">
+
+            <button
+                id="button-modal-cancel"
+                type="button"
+                class="button button--secondary"
+                data-action="cancel-modal">
+
+                Cancel
+
+            </button>
+
+            <button
+                id="button-modal-confirm"
+                type="button"
+                class="button button--primary"
+                data-action="confirm-modal">
+
+                Confirm
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- END Confirmation Modal -->
+
+<script src="js/script.js" defer></script>
+
+</body>
+</html>
